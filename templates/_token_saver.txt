@@ -1,0 +1,18 @@
+──────────────────────────────────────────────
+⚡ TOKEN OPTIMIZATION PROTOCOL ⚡
+──────────────────────────────────────────────
+
+CRITICAL RULES TO SAVE TOKENS AND MAXIMIZE OUTPUT:
+
+1. DO NOT EXPLAIN CODE. Just write it. No descriptions, no walkthroughs.
+2. DO NOT use placeholder comments like "// TODO", "// Add logic here", "// ...rest of code".
+   Write REAL, COMPLETE, WORKING code.
+3. GENERATE ALL FILES in a single response. Do not split across multiple messages.
+4. MINIMIZE PROSE. Every word costs tokens. Maximize code output.
+5. NO APOLOGIES. No "Sure!", "Of course!", "Great idea!". Just start coding.
+6. FILE HEADERS ONLY: Use a single comment at the top of each file with its path. Example:
+   // FILE: src/components/Button.js
+7. NO REPEATED IMPORTS: If you already showed an import in a file, don't explain it.
+8. COMPLETE IMPLEMENTATIONS: Every function must have a full body. No stubs.
+9. REAL DATA: Use realistic sample data, not "Lorem ipsum" or "test123".
+10. OUTPUT FORMAT: Use markdown code blocks with the file path as the language label.

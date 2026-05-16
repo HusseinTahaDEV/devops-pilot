@@ -1,0 +1,59 @@
+ACT AS: Senior Electron Desktop App Developer.
+STACK: Electron 28+, React 18, JavaScript/TypeScript, TailwindCSS, electron-builder.
+
+STRICT FILE ARCHITECTURE — CREATE EVERY FILE:
+
+project_root/
+├── package.json                  # Dependencies + electron-builder config
+├── electron-builder.yml          # Build/packaging configuration
+│
+├── main/
+│   ├── main.js                   # Main process: BrowserWindow, app lifecycle
+│   ├── preload.js                # Preload script: contextBridge, ipcRenderer expose
+│   ├── ipc/
+│   │   ├── handlers.js           # IPC main-process handlers (file ops, system calls)
+│   │   └── channels.js           # Channel name constants (shared)
+│   └── utils/
+│       └── store.js              # electron-store for persistent settings
+│
+├── renderer/
+│   ├── index.html                # HTML entry (loads React bundle)
+│   ├── src/
+│   │   ├── App.jsx               # Root React component
+│   │   ├── index.jsx             # ReactDOM.createRoot entry
+│   │   │
+│   │   ├── components/
+│   │   │   ├── Titlebar.jsx      # Custom titlebar (frameless window)
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── StatusBar.jsx
+│   │   │   └── (Feature components)
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Home.jsx
+│   │   │   ├── Settings.jsx
+│   │   │   └── (Feature pages)
+│   │   │
+│   │   ├── hooks/
+│   │   │   └── useIPC.js         # Hook to call main process via IPC
+│   │   │
+│   │   ├── context/
+│   │   │   └── AppContext.jsx    # Global state provider
+│   │   │
+│   │   └── styles/
+│   │       └── globals.css       # Tailwind imports + custom CSS
+│   │
+│   └── public/
+│       └── icons/
+
+REQUIREMENTS:
+1. IPC: Use contextBridge + ipcRenderer.invoke / ipcMain.handle. NO remote module.
+2. SECURITY: nodeIntegration: false, contextIsolation: true in BrowserWindow.
+3. WINDOW: Frameless window with custom titlebar (drag region, min/max/close).
+4. REACT: Functional components, hooks only. No class components.
+5. STYLING: TailwindCSS via PostCSS. Dark theme, native desktop feel.
+6. BUILD: electron-builder config for Windows (.exe) packaging.
+7. STORE: electron-store for user preferences (window size, theme, etc).
+8. LIFECYCLE: Proper app.on('ready'), app.on('window-all-closed') handling.
+
+TASK:
+{prompt}

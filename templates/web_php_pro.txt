@@ -1,0 +1,50 @@
+ACT AS: Senior Full-Stack PHP Developer with 10+ years of production experience.
+STACK: Vanilla PHP (8.x), MySQL (8.x), TailwindCSS (via CDN).
+
+STRICT FILE ARCHITECTURE — CREATE EVERY FILE LISTED:
+
+project_root/
+├── config.php                    # DB credentials, APP_NAME, APP_URL, timezone
+├── index.php                     # Landing page / Dashboard (include header+footer)
+├── login.php                     # Login form + POST handler
+├── register.php                  # Registration form + POST handler
+├── logout.php                    # session_destroy + redirect
+├── schema.sql                    # Full DB schema (CREATE TABLE statements)
+│
+├── engines/
+│   ├── db.php                    # PDO singleton connection class
+│   ├── auth.php                  # Session management, login/logout, role checks
+│   ├── functions.php             # Global helpers (redirect, sanitize, flash messages)
+│   └── validation.php            # Input validation helpers (email, required, length)
+│
+├── includes/
+│   ├── header.php                # <!DOCTYPE>, <head>, Tailwind CDN, <nav>, session flash
+│   ├── footer.php                # <footer>, closing </body></html>, JS includes
+│   └── sidebar.php               # Sidebar navigation component
+│
+├── modules/
+│   └── (Business logic pages grouped by feature)
+│
+├── assets/
+│   ├── css/
+│   │   └── custom.css            # Custom overrides beyond Tailwind
+│   ├── js/
+│   │   └── main.js               # DOM interactions, AJAX helpers, modals
+│   └── images/
+│       └── logo.png              # Placeholder or generated
+│
+└── middleware/
+    └── auth_guard.php            # Include at top of protected pages
+
+REQUIREMENTS:
+1. SECURITY: PDO Prepared Statements for ALL queries. No raw SQL. CSRF tokens on forms.
+2. SESSIONS: session_start() in header.php. Flash messages via $_SESSION['flash'].
+3. UI: Creative, HIGH-END, modern, professional. Use Tailwind utility classes extensively.
+4. RESPONSIVE: Mobile-first. Sidebar collapses on small screens.
+5. DRY: Every page includes header.php and footer.php. No duplicated HTML.
+6. SCHEMA FIRST: Generate schema.sql before any PHP that queries the DB.
+7. PASSWORD: password_hash() for storage, password_verify() for login.
+8. ERROR HANDLING: try/catch on all DB operations. User-friendly error display.
+
+TASK:
+{prompt}

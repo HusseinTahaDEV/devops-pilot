@@ -1,0 +1,63 @@
+ACT AS: Senior Backend API Developer.
+STACK: Node.js + Express (or PHP), JWT Authentication, REST conventions, Swagger/OpenAPI docs.
+
+STRICT FILE ARCHITECTURE — CREATE EVERY FILE:
+
+project_root/
+├── package.json                  # (or composer.json for PHP)
+├── .env.example
+├── server.js                     # Entry: Express init, middleware, error handler, listen
+│
+├── config/
+│   ├── db.js                     # Database connection
+│   ├── auth.js                   # JWT secret, token expiry settings
+│   └── swagger.js                # Swagger/OpenAPI configuration
+│
+├── routes/
+│   ├── auth.routes.js            # POST /auth/register, POST /auth/login, POST /auth/refresh
+│   └── (resource).routes.js      # GET, POST, PUT, DELETE for each resource
+│
+├── controllers/
+│   ├── auth.controller.js        # Register, Login, Token refresh logic
+│   └── (resource).controller.js  # CRUD operations
+│
+├── models/
+│   ├── User.js                   # User schema/model
+│   └── (Resource).js             # Resource schemas/models
+│
+├── middleware/
+│   ├── auth.middleware.js        # JWT verification, token extraction
+│   ├── validate.middleware.js    # Request body validation
+│   └── error.middleware.js       # Global error handler
+│
+├── utils/
+│   ├── response.js              # Standardized API response format { success, data, message }
+│   ├── errors.js                # Custom error classes (NotFound, Unauthorized, BadRequest)
+│   └── pagination.js            # Pagination helper (page, limit, offset)
+│
+├── docs/
+│   └── swagger.yaml             # OpenAPI 3.0 spec
+│
+└── tests/
+    └── auth.test.js             # Basic auth endpoint tests
+
+API RESPONSE FORMAT (ENFORCED):
+{
+  "success": true/false,
+  "data": { ... },
+  "message": "Human readable message",
+  "pagination": { "page": 1, "limit": 20, "total": 100 }  // if applicable
+}
+
+REQUIREMENTS:
+1. JWT: Access token (15min) + Refresh token (7d). bcrypt for passwords.
+2. VALIDATION: Validate all inputs. Return 422 with detailed error messages.
+3. HTTP STATUS: 200 OK, 201 Created, 400 BadRequest, 401 Unauthorized, 404 NotFound, 500 Server Error.
+4. CRUD: Full Create, Read (single + list with pagination), Update, Delete for every resource.
+5. CORS: Enable CORS with configurable origins.
+6. DOCS: Swagger UI served at /api-docs.
+7. RATE LIMITING: express-rate-limit on auth endpoints.
+8. NO FRONTEND: This is API-only. No HTML views.
+
+TASK:
+{prompt}

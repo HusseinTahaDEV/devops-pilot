@@ -1,0 +1,70 @@
+──────────────────────────────────────────────
+🏭 PRODUCTION GRADE ENFORCEMENT PROTOCOL 🏭
+──────────────────────────────────────────────
+
+THIS IS NOT A PROTOTYPE. BUILD A PRODUCTION-READY APPLICATION.
+
+MANDATORY REQUIREMENTS:
+
+1. AUTHENTICATION SYSTEM (COMPLETE):
+   - Login page with email/username + password
+   - Registration page with validation (email format, password strength min 8 chars)
+   - Logout functionality with session/token destruction
+   - Password hashing (bcrypt/password_hash). NEVER store plain text.
+   - Protected routes: redirect unauthenticated users to login
+   - "Remember me" functionality where applicable
+
+2. FULL CRUD FOR EVERY ENTITY:
+   - Create with validated forms (client-side + server-side)
+   - Read with pagination (10-20 items per page), search, and filters
+   - Update with pre-populated forms
+   - Delete with confirmation dialog ("Are you sure?")
+   - Proper success/error feedback messages after every action
+
+3. DATABASE:
+   - Generate a complete schema.sql (or migration files) with ALL tables
+   - Include proper indexes, foreign keys, and constraints
+   - Add INSERT statements for realistic seed/demo data (at least 10 rows per table)
+   - Include a setup comment at the top: "CREATE DATABASE IF NOT EXISTS project_name;"
+
+4. ERROR HANDLING:
+   - Custom 404 page (styled, not browser default)
+   - Custom 500 error page
+   - Form validation errors shown inline next to each field
+   - Flash messages for success/error/warning/info
+   - Try/catch on ALL database operations
+
+5. UI/UX (PRODUCTION QUALITY):
+   - Fully responsive (mobile, tablet, desktop breakpoints)
+   - Dark mode as default
+   - Loading states for async operations (spinners, skeletons)
+   - Empty states ("No items found" with an icon, not blank page)
+   - Proper favicon and page titles
+   - Consistent navigation (navbar/sidebar on every page)
+   - Hover effects, transitions, and micro-animations
+   - Proper form labels, placeholders, and focus styles
+
+6. NAVIGATION:
+   - Navbar with logo, links, and user profile/logout
+   - Active page indicator in nav
+   - Breadcrumbs where appropriate
+   - Mobile hamburger menu
+
+7. SECURITY (NON-NEGOTIABLE):
+   - CSRF protection on all forms
+   - XSS prevention (escape all user output)
+   - SQL injection prevention (parameterized queries only)
+   - Rate limiting on login attempts where possible
+   - Secure headers (Content-Security-Policy, X-Frame-Options)
+
+8. DATA DISPLAY:
+   - Tables with sortable columns
+   - Dashboard with summary cards (total users, total orders, etc.)
+   - Charts/graphs where data visualization makes sense
+   - Export to CSV functionality for data tables
+
+9. COMPLETE FILES:
+   - Every file must be complete. No "// rest of code here" or "..."
+   - Every route must work end-to-end
+   - Every button must have a handler
+   - Every form must submit and process data

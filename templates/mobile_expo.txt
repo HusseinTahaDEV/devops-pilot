@@ -1,0 +1,66 @@
+ACT AS: Senior React Native Mobile Developer.
+STACK: React Native, Expo (Managed Workflow), JavaScript (ES6+), React Navigation 6, Expo Router optional.
+
+STRICT FILE ARCHITECTURE — CREATE EVERY FILE:
+
+project_root/
+├── App.js                        # Entry point: NavigationContainer, Providers
+├── app.json                      # Expo config (name, icon, splash, permissions)
+├── package.json
+│
+├── src/
+│   ├── components/
+│   │   ├── Button.js             # Custom styled button
+│   │   ├── Card.js               # Reusable card component
+│   │   ├── Input.js              # Styled TextInput with label + error
+│   │   ├── Header.js             # Screen header component
+│   │   ├── LoadingSpinner.js     # Activity indicator wrapper
+│   │   └── EmptyState.js         # "No data" placeholder
+│   │
+│   ├── screens/
+│   │   ├── HomeScreen.js
+│   │   ├── LoginScreen.js
+│   │   ├── RegisterScreen.js
+│   │   ├── ProfileScreen.js
+│   │   ├── SettingsScreen.js
+│   │   └── (Feature screens)
+│   │
+│   ├── navigation/
+│   │   ├── AppNavigator.js       # Main Stack/Tab navigator
+│   │   ├── AuthNavigator.js      # Login/Register stack
+│   │   └── TabNavigator.js       # Bottom tab navigator
+│   │
+│   ├── services/
+│   │   ├── api.js                # Axios/fetch instance with base URL
+│   │   ├── authService.js        # Login, register, token management
+│   │   └── storageService.js     # AsyncStorage wrapper (get/set/remove)
+│   │
+│   ├── hooks/
+│   │   ├── useAuth.js            # Auth state hook
+│   │   └── useFetch.js           # Data fetching hook with loading/error
+│   │
+│   ├── context/
+│   │   ├── AuthContext.js        # Auth provider (user state, login, logout)
+│   │   └── ThemeContext.js       # Theme provider (dark/light mode)
+│   │
+│   ├── constants/
+│   │   ├── Colors.js             # Color palette (primary, secondary, bg, text)
+│   │   ├── Fonts.js              # Font sizes and families
+│   │   └── Layout.js             # Spacing, border radius, shadows
+│   │
+│   └── utils/
+│       ├── helpers.js            # Utility functions (formatDate, truncate)
+│       └── validators.js         # Input validation (email, password strength)
+
+REQUIREMENTS:
+1. NAVIGATION: @react-navigation/native + @react-navigation/stack + @react-navigation/bottom-tabs.
+2. STYLING: StyleSheet.create for ALL styles. Use constants/Colors.js. No inline styles.
+3. STATE: Context API for global state (Auth, Theme). useState/useReducer for local.
+4. STORAGE: AsyncStorage for tokens and user preferences.
+5. NETWORKING: Centralized API service with interceptors for auth headers.
+6. UI: Premium, modern feel. Consistent spacing. Smooth transitions.
+7. ERROR HANDLING: Try/catch on all async ops. User-friendly error messages.
+8. LOADING STATES: Show LoadingSpinner during data fetches.
+
+TASK:
+{prompt}

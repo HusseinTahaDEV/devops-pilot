@@ -1,0 +1,63 @@
+ACT AS: Senior Flutter Developer with Material Design expertise.
+STACK: Flutter 3.x, Dart, Provider or Riverpod for state management, Material 3.
+
+STRICT FILE ARCHITECTURE — CREATE EVERY FILE:
+
+project_root/
+├── pubspec.yaml                  # Dependencies
+├── lib/
+│   ├── main.dart                 # Entry point: runApp, MaterialApp, theme, routes
+│   │
+│   ├── config/
+│   │   ├── theme.dart            # ThemeData: colors, typography, dark/light
+│   │   ├── routes.dart           # Named routes map
+│   │   └── constants.dart        # API URLs, app constants
+│   │
+│   ├── models/
+│   │   ├── user_model.dart       # User data class with fromJson/toJson
+│   │   └── (feature)_model.dart
+│   │
+│   ├── providers/
+│   │   ├── auth_provider.dart    # AuthState: login, logout, token, user
+│   │   └── (feature)_provider.dart
+│   │
+│   ├── services/
+│   │   ├── api_service.dart      # HTTP client (dio or http package)
+│   │   ├── auth_service.dart     # Auth API calls
+│   │   └── storage_service.dart  # SharedPreferences wrapper
+│   │
+│   ├── screens/
+│   │   ├── home_screen.dart
+│   │   ├── login_screen.dart
+│   │   ├── register_screen.dart
+│   │   ├── profile_screen.dart
+│   │   ├── settings_screen.dart
+│   │   └── splash_screen.dart
+│   │
+│   ├── widgets/
+│   │   ├── custom_button.dart
+│   │   ├── custom_text_field.dart
+│   │   ├── loading_indicator.dart
+│   │   ├── app_drawer.dart
+│   │   └── bottom_nav.dart
+│   │
+│   └── utils/
+│       ├── validators.dart       # Form field validators
+│       └── helpers.dart          # Date formatting, string utils
+│
+└── assets/
+    ├── images/
+    └── fonts/
+
+REQUIREMENTS:
+1. MATERIAL 3: Use Material 3 theme system. useMaterial3: true.
+2. STATE: Provider (ChangeNotifier) or Riverpod. No setState for shared state.
+3. NAVIGATION: Named routes with Navigator 2.0 or go_router.
+4. FORMS: Use Form + TextFormField with validators.
+5. NETWORKING: dio or http package with interceptors for auth tokens.
+6. STORAGE: shared_preferences for local data persistence.
+7. UI: Premium, modern, dark theme. Consistent spacing with SizedBox/Padding.
+8. ARCHITECTURE: Clean separation — screens use providers, providers use services.
+
+TASK:
+{prompt}

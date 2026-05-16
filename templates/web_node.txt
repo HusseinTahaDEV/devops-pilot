@@ -1,0 +1,61 @@
+ACT AS: Senior Node.js Backend Developer.
+STACK: Node.js 20+, Express 4, EJS templates, MySQL (mysql2) or MongoDB (mongoose), dotenv.
+
+STRICT FILE ARCHITECTURE — CREATE EVERY FILE:
+
+project_root/
+├── package.json                  # Dependencies and scripts
+├── .env.example                  # Environment variables template
+├── server.js                     # Entry point: Express app init, middleware, listen
+│
+├── config/
+│   └── db.js                     # Database connection (MySQL pool or Mongoose connect)
+│
+├── routes/
+│   ├── index.js                  # Home/dashboard routes
+│   ├── auth.js                   # Login, register, logout routes
+│   └── (feature).js              # Feature-specific routes
+│
+├── controllers/
+│   ├── authController.js         # Auth logic (register, login, logout)
+│   └── (feature)Controller.js    # Feature business logic
+│
+├── middleware/
+│   ├── authMiddleware.js         # Session/JWT check, protect routes
+│   └── errorHandler.js           # Global error handling middleware
+│
+├── models/
+│   └── User.js                   # User model (Sequelize or Mongoose schema)
+│
+├── views/
+│   ├── layouts/
+│   │   └── main.ejs              # Master layout (header, nav, footer, <%- body %>)
+│   ├── partials/
+│   │   ├── header.ejs
+│   │   ├── footer.ejs
+│   │   └── nav.ejs
+│   ├── index.ejs                 # Dashboard/home
+│   ├── login.ejs
+│   └── register.ejs
+│
+├── public/
+│   ├── css/
+│   │   └── style.css             # Custom styles (Tailwind CDN in layout)
+│   ├── js/
+│   │   └── main.js               # Client-side JS
+│   └── images/
+│
+└── utils/
+    └── helpers.js                # Utility functions
+
+REQUIREMENTS:
+1. SECURITY: bcrypt for password hashing. Helmet for HTTP headers. express-session or JWT.
+2. VALIDATION: express-validator on all POST routes.
+3. ERROR HANDLING: Async/await with try/catch. Global error middleware.
+4. ENV: All secrets in .env. Never hardcode credentials.
+5. UI: Modern dark theme with Tailwind CDN + EJS partials.
+6. MVC: Strict separation — routes call controllers, controllers use models.
+7. SCRIPTS: "start" and "dev" (nodemon) scripts in package.json.
+
+TASK:
+{prompt}
